@@ -1,146 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Interactive Letter to Future IB Students</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: "Segoe UI", sans-serif;
       padding: 20px;
-      line-height: 1.6;
-      background-color: #f9f9f9;
-    }
-    .block {
-      display: none;
-      margin-top: 20px;
-    }
-    .choice {
-      margin-top: 10px;
-      margin-bottom: 10px;
-    }
-    .response {
-      display: none;
-      margin-left: 20px;
+      max-width: 800px;
+      margin: auto;
+      background-color: #f4f4f9;
       color: #333;
     }
-    button {
-      margin: 5px 0;
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+    .block {
+      margin: 20px 0;
+    }
+    .choices button, #restart {
+      display: block;
+      margin: 10px 0;
+      padding: 10px;
+      font-size: 16px;
+      background: #3498db;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .choices button:hover, #restart:hover {
+      background-color: #2980b9;
+    }
+    .choice-label {
+      color: #8e44ad;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+    #restart {
+      background-color: #e74c3c;
+      display: none;
+    }
+    #restart:hover {
+      background-color: #c0392b;
     }
   </style>
 </head>
 <body>
-  <h1>Dear future IB student,</h1>
 
-  <div id="block1" class="block" style="display: block">
-    <p>I’m going to start off with a strong (and maybe even controversial) claim: English was my favorite class in CEGEP, sincerely. I’m not just saying this because my teacher will read this entry and grade it, these words forever imprinting themselves on my R-score. Yup, the infamous R-score!</p>
-    <button onclick="showBlock('block2')">Next</button>
-  </div>
+  <h1>An Interactive Letter to Future IB Students</h1>
 
-  <div id="block2" class="block">
-    <p><strong>How do you feel about it?</strong></p>
-    <div class="choice">
-      <button onclick="showResponse('anxious')">I am so anxious about my R-score!</button>
-      <button onclick="showResponse('dontKnow')">I don’t even know what that is.</button>
-      <button onclick="showResponse('dontCare')">Who cares about the R-score?!</button>
-    </div>
-    <div id="anxious" class="response">
-      <p>I hear you, I was terrified as well! It seems as though this one mysterious formula determines your entire future!</p>
-      <button onclick="showBlock('block3')">Next</button>
-    </div>
-    <div id="dontKnow" class="response">
-      <p>I’m certain you’ll soon learn everything about it, as IB is known to be a group of people who REALLY value it (we are more than that though)!</p>
-      <button onclick="showBlock('block3')">Next</button>
-    </div>
-    <div id="dontCare" class="response">
-      <p>Ok, hold on, are you even an IB student? As long as you're saying this because you understand that the R-score doesn’t define you, you’re on the right path!</p>
-      <button onclick="showBlock('block3')">Next</button>
-    </div>
-  </div>
-
-  <div id="block3" class="block">
-    <p>While it seems like CEGEP is all about the R-score, I've learnt that it's way more than that; it’s about the classmates that become your best friends, the novels that become your favorite books, the club that turns into your passion. And if you put everything you’ve got into everything you do, you won’t have to worry about your R-score!</p>
-    <button onclick="showBlock('block4')">Next</button>
-  </div>
-
-  <div id="block4" class="block">
-    <p>Getting back to my controversial claim, let me elaborate. The first reason I love English is because of the collaborative environment. Almost every class, you’ll have time to discuss novels, poems, cartoons, political speeches, movies, short stories and even podcasts with your peers. Use that time wisely! Also, stay up to date on your reading, because class is much more fun when you understand what’s going on!</p>
-    <button onclick="showBlock('block5')">Next</button>
-  </div>
-
-  <div id="block5" class="block">
-    <p><strong>How do you read?</strong></p>
-    <div class="choice">
-      <button onclick="showResponse('annotate')">I annotate heavily! There’s never enough color!</button>
-      <button onclick="showResponse('highlight')">I just highlight.</button>
-      <button onclick="showResponse('ai')">SparkNotes + ChatGPT</button>
-    </div>
-    <div id="annotate" class="response">
-      <p>That’s great! Keep doing what you need to fully understand and appreciate the work. In the final exam, you won’t have the book with you, though, so I suggest you keep a sheet of paper or a Word document on the side to note down important passages. Trust me, your future self will thank you!</p>
-      <button onclick="showBlock('block6')">Next</button>
-    </div>
-    <div id="highlight" class="response">
-      <p>That’s good! Highlighting important passages is what I do too! But don’t forget to also write a little summary for each chapter, and maybe note a few literary features or personal reflections—your future self will thank you!</p>
-      <button onclick="showBlock('block6')">Next</button>
-    </div>
-    <div id="ai" class="response">
-      <p>Yeah, that won’t work in IB! While these tools can help you get a general idea of the themes and content of a work, you’ll have to use your brain to figure out the rest: which features to analyze, how to structure your essays and what the author’s intention is. Keep a document where you jot down important quotes and notes as you go—your future self will thank you!</p>
-      <button onclick="showBlock('block6')">Next</button>
-    </div>
-  </div>
-
-  <div id="block6" class="block">
-    <p>Also, don’t just forget all about a work after you’ve been evaluated on it, you’ll keep coming back to the literary and non-literary works you have come across for the rest of your IB journey!</p>
-    <button onclick="showBlock('block7')">Next</button>
-  </div>
-
-  <div id="block7" class="block">
-    <p>Another reason I love English is that it is one of the rare moments in IB where you get to be creative! Take the opportunity, notably through your portfolios, to express your creativity. I’ve written songs, coded websites (this one!); the possibilities are endless! Whether you’re into arts, music, writing, photography or anything else, you get to use those passions to your advantage.</p>
-    <button onclick="showBlock('block8')">Next</button>
-  </div>
-
-  <div id="block8" class="block">
-    <p><strong>What do you like doing?</strong></p>
-    <div class="choice">
-      <button onclick="showResponse('music')">Music!</button>
-      <button onclick="showResponse('writing')">Writing/poetry</button>
-      <button onclick="showResponse('other')">Anything else</button>
-    </div>
-    <div id="music" class="response">
-      <p>Great! Whether you play an instrument or like to compose songs, you can use those skills to reflect on a particular novel or movie you’ll watch in class! Write a song from the perspective of the protagonist or compose a soundtrack that could feature in the movie, it’s up to you!</p>
-      <button onclick="showBlock('block9')">Next</button>
-    </div>
-    <div id="writing" class="response">
-      <p>Well, you’re in the right class! Let the words flow out and release your inner Shakespeare in all your assignments!!</p>
-      <button onclick="showBlock('block9')">Next</button>
-    </div>
-    <div id="other" class="response">
-      <p>Whether that be photography, sports, cinema or coding, try to be creative in your portfolio entries (that’s how you’ll get the good grades haha)! Make a short movie, create a dance choreography inspired by a novel or code up an interactive display! The possibilities are endless.</p>
-      <button onclick="showBlock('block9')">Next</button>
-    </div>
-  </div>
-
-  <div id="block9" class="block">
-    <p>Lastly, I feel as though, in English class, we talk about a lot of modern (global) issues, ranging from feminism to mental health. It really showed me that language is ultimately a vessel to culture and has urged me to reflect on certain societal issues that are heavily present in our society.</p>
-    <button onclick="showBlock('block10')">Next</button>
-  </div>
-
-  <div id="block10" class="block">
-    <p>All in all, English class will only be fun if you give it a real chance. Participate in class, read your novels and have deep discussions with your classmates. You might also discover an unexpected passion for English A Language and Literature!</p>
-
-    <p><strong>Best wishes,</strong><br>A fellow IB survivor :)</p>
-  </div>
+  <div id="app"></div>
+  <button id="restart" onclick="restartApp()">Restart</button>
 
   <script>
-    function showBlock(id) {
-      document.getElementById(id).style.display = 'block';
-      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    const content = [
+      {
+        text: `Dear future IB student,
+
+I’m going to start off with a strong (and maybe even controversial) claim: English was my favorite class in CEGEP, sincerely. I’m not just saying this because my teacher will read this entry and grade it, these words forever imprinting themselves on my R-score. Yup, the infamous R-score! 
+
+How do you feel about it?`,
+        choices: [
+          {
+            label: "I am so anxious about my R-score!",
+            response: `I hear you, I was terrified as well! It seems as though this one mysterious formula determines your entire future!`
+          },
+          {
+            label: "I don’t even know what that is.",
+            response: `I’m certain you’ll soon learn everything about it, as IB is known to be a group of people who REALLY value it (we are more than that though)!`
+          },
+          {
+            label: "Who cares about the R-score?!",
+            response: `Ok, hold on, are you even an IB student? As long as you're saying this because you understand that the R-score doesn’t define you, you’re on the right path!`
+          }
+        ]
+      },
+      {
+        text: `While it seems like CEGEP is all about the R-score, I've learnt that it's way more than that; it’s about the classmates that become your best friends, the novels that become your favorite books, the club that turns into your passion. And if you put everything you’ve got into everything you do, you won’t have to worry about your R-score! 
+
+Getting back to my controversial claim, let me elaborate. The first reason I love English is because of the collaborative environment. Almost every class, you’ll have time to discuss novels, poems, cartoons, political speeches, movies, short stories and even podcasts with your peers. Use that time wisely! Also, stay up to date on your reading, because class is much more fun when you understand what’s going on!
+
+How do you read?`,
+        choices: [
+          {
+            label: "I annotate heavily! There’s never enough color!",
+            response: `That’s great! Keep doing what you need to fully understand and appreciate the work. In the final exam, you won’t have the book with you, though, so I suggest you keep a sheet of paper or a word document on the side to note down important passages.`
+          },
+          {
+            label: "I just highlight.",
+            response: `That’s good! Highlighting important passages is what I do too! I suggest you keep a sheet of paper or a word document on the side to note down important passages, because you’ll need them for your paper 1 and paper 2!`
+          },
+          {
+            label: "SparkNotes + ChatGPT",
+            response: `Yeah, that won’t work in IB! While these tools can help you get a general idea of the themes and content of a work, you’ll have to use your brain to figure out the rest: which features to analyze, how to structure your essays and what the author’s intention is. I suggest you keep a sheet of paper or a word document on the side to note down important passages, because you’ll need them for your paper 1 and paper 2!`
+          }
+        ]
+      },
+      {
+        text: `Also, don’t just forget all about a work after you’ve been evaluated on it, you’ll keep coming back to the literary and non-literary works you have come across for the rest of your IB journey!
+
+Another reason I love English is that it is one of the rare moments in IB where you get to be creative! Take the opportunity, notably through your portfolios, to express your creativity. I’ve written songs, coded websites (this one!); the possibilities are endless! Whether you’re into arts, music, writing, photography or anything else, you get to use those passions to your advantage.
+
+What do you like doing?`,
+        choices: [
+          {
+            label: "Music!",
+            response: `Great! Whether you play an instrument or like to compose songs, you can use those skills to reflect on a particular novel or movie you’ll watch in class! Write a song from the perspective of the protagonist or compose a soundtrack that could feature in the movie, it’s up to you!`
+          },
+          {
+            label: "Writing/poetry",
+            response: `Well, you’re in the right class! Let the words flow out and release your inner Shakespeare in all your assignments!!`
+          },
+          {
+            label: "Something else",
+            response: `Whether that be photography, sports, cinema or coding, try to be creative in your portfolio entries (that’s how you’ll get the good grades haha)! Make a short movie, create a dance choreography inspired by a novel or code up an interactive display! The possibilities are endless.`
+          }
+        ]
+      },
+      {
+        text: `Lastly, I feel as though, in English class, we talk about a lot of modern (global) issues, ranging from feminism to mental health. It really showed me that language is ultimately a vessel to culture and has urged me to reflect on certain societal issues that are heavily present in our society.
+
+All in all, English class will only be fun if you give it a real chance. Participate in class, read your novels and have deep discussions with your classmates. You might also discover an unexpected passion for English A Language and Literature!
+
+Best wishes,  
+A fellow IB survivor :)`,
+        choices: []
+      }
+    ];
+
+    let step = 0;
+    const app = document.getElementById("app");
+    const restartBtn = document.getElementById("restart");
+
+    function renderStep() {
+      const block = document.createElement("div");
+      block.className = "block";
+      block.innerText = content[step].text;
+      app.appendChild(block);
+
+      if (content[step].choices.length > 0) {
+        const choices = document.createElement("div");
+        choices.className = "choices";
+        content[step].choices.forEach(choice => {
+          const btn = document.createElement("button");
+          btn.innerText = choice.label;
+          btn.onclick = () => {
+            const selected = document.createElement("div");
+            selected.className = "choice-label";
+            selected.innerText = choice.label;
+            app.appendChild(selected);
+
+            const response = document.createElement("div");
+            response.className = "block";
+            response.innerText = choice.response;
+            app.appendChild(response);
+
+            choices.remove();
+
+            step++;
+            setTimeout(renderStep, 1000);
+          };
+          choices.appendChild(btn);
+        });
+        app.appendChild(choices);
+      } else {
+        step++;
+        if (step < content.length) {
+          setTimeout(renderStep, 1000);
+        } else {
+          restartBtn.style.display = "block";
+        }
+      }
     }
 
-    function showResponse(id) {
-      document.querySelectorAll('.response').forEach(el => el.style.display = 'none');
-      document.getElementById(id).style.display = 'block';
+    function restartApp() {
+      step = 0;
+      app.innerHTML = "";
+      restartBtn.style.display = "none";
+      renderStep();
     }
+
+    renderStep();
   </script>
 </body>
 </html>
